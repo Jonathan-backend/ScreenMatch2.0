@@ -23,7 +23,7 @@ public class ScreenMatchApplication implements CommandLineRunner {
         ConverteDados conversor = new ConverteDados();
         DadosSerie dados = conversor.obterDados(json , DadosSerie.class);
         System.out.println(dados);
-
+        System.out.println(json);
 
     }
 }
