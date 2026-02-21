@@ -1,4 +1,4 @@
-package br.com.Screenmatch.service;
+package com.academico.ScreenMatch.service;
 
 public interface IConverteDados {
   <T> T  obterDados(String json, Class<T> classe);

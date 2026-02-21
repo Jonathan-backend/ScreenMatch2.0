@@ -3,7 +3,7 @@ package br.com.Screenmatch.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class ConverteDados implements IConverteDados{
+public class ConverteDados implements com.academico.ScreenMatch.service.IConverteDados {
     private ObjectMapper mapper = new ObjectMapper();
 
     @Override
