@@ -7,6 +7,8 @@ import br.com.Screenmatch.models.Episodio;
 import br.com.Screenmatch.service.ConsumoAPI;
 import br.com.Screenmatch.service.ConverteDados;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import java.util.Comparator;
@@ -46,11 +48,12 @@ public class Principal {
                 .flatMap(t -> t.episodios().stream())
                 .collect(Collectors.toList());
 
-        System.out.println("\nTop 5 epsódios");
+        System.out.println("\nTop 10 epsódios");
         dadosEpisodios.stream()
                 .filter(e -> !e.avaliacao().equalsIgnoreCase("N/A"))
                 .sorted(Comparator.comparing(DadosEpisodio::avaliacao).reversed())
-                .limit(5)
+                .limit(10)
+                .map(e -> e.titulo().toUpperCase())
                 .forEach(System.out::println);
 
             List<Episodio> episodios = temporadas.stream()
@@ -59,5 +62,20 @@ public class Principal {
                     ).collect(Collectors.toList());
 
             episodios.forEach(System.out::println);
+
+        System.out.println("A partir de que ano vocÊ deseja ver os episódios?");
+        var ano = leitura.nextInt();
+        leitura.nextLine();
+
+        LocalDate dataBusca = LocalDate.of(ano, 1, 1);
+        DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        episodios.stream()
+                .filter(e ->e.getDataLancamento() != null && e.getDataLancamento().isAfter(dataBusca))
+                .forEach(e -> System.out.println(
+                        "Temporada: "+ e.getTemporada() +
+                                " Episódio: " + e.getTitulo() +
+                                " Data lançamento "+ e.getDataLancamento().format(formatador)
+                ));
     }
 }
