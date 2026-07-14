@@ -1,18 +1,29 @@
 # 🎬 ScreenMatch 2.0
 
-Uma aplicação desenvolvida em **Java** com **Spring Boot** que permite pesquisar filmes e séries e visualizar informações detalhadas sobre cada título.
+![Java](https://img.shields.io/badge/Java-17+-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
+![REST API](https://img.shields.io/badge/API-REST-blue?style=for-the-badge)
 
-O projeto simula uma plataforma de catálogo de filmes, semelhante à Netflix, porém voltada exclusivamente para consulta de informações, como avaliações e detalhes dos títulos.
+## 📖 Sobre o projeto
+
+O **ScreenMatch 2.0** é uma aplicação backend desenvolvida em **Java** com **Spring Boot** que permite pesquisar filmes e séries utilizando a **API OMDb**.
+
+A aplicação realiza consultas em tempo real e retorna informações detalhadas sobre os títulos pesquisados, como nome, avaliação, ano de lançamento e outras informações disponibilizadas pela API.
+
+O objetivo do projeto foi praticar conceitos de desenvolvimento backend, consumo de APIs REST, organização em camadas e manipulação de dados em Java.
 
 ---
 
 ## ✨ Funcionalidades
 
-- 🔍 Pesquisa de filmes e séries
-- 🎥 Consulta de informações detalhadas
-- ⭐ Visualização das avaliações dos títulos
-- 📄 Exibição de informações como título e outros dados disponíveis
-- 🌐 Consumo de API para obtenção dos dados
+- 🔍 Buscar filmes pelo título
+- 📺 Buscar séries
+- ⭐ Consultar avaliações
+- 📅 Visualizar ano de lançamento
+- 🎬 Exibir informações detalhadas dos títulos
+- 🌐 Consumo da API OMDb
+- 📦 Retorno dos dados em formato JSON
 
 ---
 
@@ -24,24 +35,27 @@ O projeto simula uma plataforma de catálogo de filmes, semelhante à Netflix, p
 - Spring Web
 - Jackson
 - API REST
+- OMDb API
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🏗 Arquitetura
+
+O projeto segue uma arquitetura em camadas para manter o código organizado e de fácil manutenção.
 
 ```
-src/
- ├── controller
- ├── service
- ├── model
- ├── repository
- ├── dto
- └── config
+src
+├── controller
+├── service
+├── model
+├── dto
+├── repository
+└── config
 ```
 
 ---
 
-## 🚀 Como executar
+## 🚀 Como executar o projeto
 
 ### Pré-requisitos
 
@@ -51,7 +65,7 @@ src/
 ### Clone o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/ScreenMatch2.0.git
+git clone https://github.com/mamoto22/ScreenMatch2.0.git
 ```
 
 ### Entre na pasta
@@ -60,7 +74,7 @@ git clone https://github.com/SEU-USUARIO/ScreenMatch2.0.git
 cd ScreenMatch2.0
 ```
 
-### Execute
+### Execute a aplicação
 
 ```bash
 ./mvnw spring-boot:run
@@ -74,34 +88,66 @@ mvn spring-boot:run
 
 ---
 
-## 📷 Demonstração
+## 🔗 API utilizada
 
-Adicione aqui imagens ou GIFs da aplicação.
+Este projeto consome a API pública **OMDb (Open Movie Database)** para obter informações sobre filmes e séries.
+
+É necessário gerar uma chave de acesso gratuita para utilizar a API.
+
+Site oficial:
+
+https://www.omdbapi.com/
 
 ---
 
-## 📚 Aprendizados
+## 📷 Exemplo de funcionamento
 
-Este projeto foi desenvolvido com o objetivo de aprofundar conhecimentos em:
+**Pesquisa**
 
-- Programação Orientada a Objetos
-- Spring Boot
+```
+Harry Potter
+```
+
+**Resposta**
+
+```
+Título: Harry Potter and the Sorcerer's Stone
+
+Ano: 2001
+
+Avaliação: 7.6
+
+Gênero: Fantasy
+
+Duração: 152 min
+```
+
+---
+
+## 📚 Objetivos do projeto
+
+Durante o desenvolvimento foram aplicados conceitos como:
+
+- Programação Orientada a Objetos (POO)
 - Consumo de APIs REST
-- Manipulação de JSON
+- Desserialização de JSON
 - Organização em camadas
-- Boas práticas de desenvolvimento em Java
+- Boas práticas em Java
+- Utilização do Spring Boot
+- Manipulação de requisições HTTP
 
 ---
 
-## 🔮 Melhorias Futuras
+## 🚀 Melhorias futuras
 
-- Sistema de usuários
-- Lista de favoritos
+- Sistema de autenticação
 - Histórico de pesquisas
-- Filtros por gênero
-- Busca por ator
-- Interface Web
-- Integração com banco de dados
+- Favoritos
+- Cache das consultas
+- Banco de dados
+- Testes automatizados
+- Docker
+- Documentação com Swagger
 
 ---
 
@@ -109,5 +155,5 @@ Este projeto foi desenvolvido com o objetivo de aprofundar conhecimentos em:
 
 **Jonathan Gomes do Nascimento**
 
-GitHub:
-https://github.com/mamoto22
+- GitHub: https://github.com/mamoto22
+- LinkedIn: https://www.linkedin.com/in/jonathannasciment0/
